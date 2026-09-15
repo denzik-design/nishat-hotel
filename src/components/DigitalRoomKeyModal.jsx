@@ -81,7 +81,7 @@ export default function DigitalRoomKeyModal({
             <div className="flex justify-between items-start relative z-10">
               <div className="flex items-center gap-2.5">
                 <div className="w-10 h-10 bg-black/60 border border-nishat-gold/60 rounded-full p-1 flex items-center justify-center shadow-lg">
-                  <img src={logoImg} alt="The Nishat Hotel" className="w-full h-full object-contain filter invert" />
+                  <img src={logoImg} alt="The Nishat Hotel" className="w-full h-full object-contain" />
                 </div>
                 <div>
                   <h4 className="font-serif text-xs sm:text-sm font-bold tracking-[0.2em] text-white uppercase">

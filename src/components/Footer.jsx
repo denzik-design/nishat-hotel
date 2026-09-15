@@ -12,7 +12,7 @@ export default function Footer({ activeProperty, setActiveProperty }) {
         <div className="space-y-4 md:col-span-1">
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 bg-nishat-navy border border-nishat-gold/50 rounded-full p-1 flex items-center justify-center">
-              <img src={logoImg} alt="The Nishat Hotel" className="w-full h-full object-contain filter invert" />
+              <img src={logoImg} alt="The Nishat Hotel" className="w-full h-full object-contain rounded-full drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]" />
             </div>
             <div>
               <h3 className="font-serif text-lg font-bold tracking-widest uppercase">

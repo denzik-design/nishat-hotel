@@ -56,7 +56,7 @@ export default function LoyaltyPassModal({ onClose }) {
             <div className="flex justify-between items-start relative z-10">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 bg-black/60 border border-nishat-gold/60 rounded-full p-1 flex items-center justify-center shadow-lg">
-                  <img src={logoImg} alt="The Nishat Hotel" className="w-full h-full object-contain filter invert drop-shadow-[0_0_8px_rgba(180,140,72,0.8)]" />
+                  <img src={logoImg} alt="The Nishat Hotel" className="w-full h-full object-contain drop-shadow-[0_0_8px_rgba(180,140,72,0.8)]" />
                 </div>
                 <div>
                   <h4 className="font-serif text-sm sm:text-base font-bold tracking-[0.2em] text-white uppercase leading-tight">

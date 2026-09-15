@@ -70,8 +70,8 @@ export default function ConfirmationFolio({
           {/* Header Monogram & Hotel Details */}
           <div className="flex justify-between items-center border-b border-zinc-800 pb-4">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-nishat-darkNavy border border-nishat-gold/50 rounded-full p-1 flex items-center justify-center">
-                <img src={logoImg} alt="The Nishat Hotel" className="w-full h-full object-contain filter invert" />
+              <div className="w-12 h-12 bg-black border border-nishat-gold/50 rounded-full p-1 flex items-center justify-center">
+                <img src={logoImg} alt="The Nishat Hotel" className="w-full h-full object-contain" />
               </div>
               <div>
                 <h3 className="font-serif text-base font-bold tracking-widest text-white uppercase">

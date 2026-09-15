@@ -79,7 +79,7 @@ export default function Navbar({
               <img 
                 src={logoImg} 
                 alt="The Nishat Hotel Monogram" 
-                className="w-full h-full object-contain filter invert contrast-125 brightness-110 drop-shadow-[0_0_8px_rgba(180,140,72,0.6)] group-hover:scale-105 transition-transform" 
+                className="w-full h-full object-contain rounded-full drop-shadow-[0_0_10px_rgba(212,175,55,0.6)] group-hover:scale-105 transition-transform" 
               />
             </div>
             <div>

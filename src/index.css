@@ -5,42 +5,48 @@
 @layer base {
   body {
     font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #000000;
+    color: #ffffff;
   }
-  h1, h2, h3, .font-serif-luxury {
+  h1, h2, h3, h4, .font-serif-luxury {
     font-family: 'Cinzel', serif;
   }
 }
 
-/* Custom scrollbar for luxury UI */
+/* Custom scrollbar in black and gold */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0f172a;
+  background: #000000;
 }
 ::-webkit-scrollbar-thumb {
-  background: #b48c48;
+  background: #d4af37;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #c5a059;
+  background: #f3e5ab;
 }
 
-/* Gold Gradient utilities */
+/* Radiant Gold Gradient utilities with White Highlights */
 .gold-gradient-text {
-  background: linear-gradient(135deg, #f4e0b0 0%, #c5a059 40%, #b48c48 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #f3e5ab 30%, #d4af37 70%, #aa820a 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .gold-gradient-bg {
-  background: linear-gradient(135deg, #c5a059 0%, #b48c48 100%);
+  background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #997a15 100%);
 }
 
 .gold-border-glow {
-  box-shadow: 0 0 15px rgba(180, 140, 72, 0.25);
-  border: 1px solid rgba(180, 140, 72, 0.4);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.35);
+  border: 1px solid rgba(212, 175, 55, 0.6);
+}
+
+.white-gold-border {
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 /* Smooth drag cursor for 360 viewer */

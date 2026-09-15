@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import PropertyHighlights from './components/PropertyHighlights';
@@ -13,6 +13,7 @@ import LoyaltyPassModal from './components/LoyaltyPassModal';
 import DigitalRoomKeyModal from './components/DigitalRoomKeyModal';
 import WhatsAppConcierge from './components/WhatsAppConcierge';
 import Footer from './components/Footer';
+import LoadingScreen from './components/LoadingScreen';
 import { PROPERTIES } from './data/propertiesData';
 import { ShieldCheck, Coffee, Clock, Award, X } from 'lucide-react';
 
@@ -20,6 +21,43 @@ export default function App() {
   const [activePage, setActivePage] = useState('stay'); // 'stay' | 'banquets' | 'dining' | 'wellness'
   const [activeProperty, setActiveProperty] = useState(PROPERTIES[0]);
   const [currency, setCurrency] = useState('PKR');
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadingMessage, setLoadingMessage] = useState('Curating 5-Star Luxury Experience...');
+
+  // Initial welcome loading effect
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1200);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const switchProperty = (prop) => {
+    if (prop.id === activeProperty.id) return;
+    setIsLoading(true);
+    setLoadingMessage(`Welcoming you to ${prop.name}...`);
+    setTimeout(() => {
+      setActiveProperty(prop);
+      setIsLoading(false);
+    }, 700);
+  };
+
+  const switchPage = (pageKey) => {
+    if (pageKey === activePage) return;
+    setIsLoading(true);
+    const titleMap = {
+      stay: 'Luxury Rooms & Royal Suites',
+      banquets: 'Grand Banquets & Royal Event Halls',
+      dining: 'Fine Dining, Buffets & Hi-Tea',
+      wellness: 'Oasis Spa & Wellness Sanctuary'
+    };
+    setLoadingMessage(`Loading ${titleMap[pageKey] || pageKey}...`);
+    setTimeout(() => {
+      setActivePage(pageKey);
+      setIsLoading(false);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 600);
+  };
 
   // Stay Dates default: check-in today, check-out +2 days
   const todayStr = new Date().toISOString().split('T')[0];
@@ -65,14 +103,17 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-nishat-navy text-white flex flex-col font-sans selection:bg-nishat-gold selection:text-nishat-navy">
+    <div className="min-h-screen bg-nishat-black text-white flex flex-col font-sans selection:bg-nishat-gold selection:text-nishat-black">
       
+      {/* 0. High-End Monogram Logo Loading Screen */}
+      {isLoading && <LoadingScreen message={loadingMessage} />}
+
       {/* 1. Executive Navbar with Multi-Page Navigation */}
       <Navbar
         activePage={activePage}
-        setActivePage={setActivePage}
+        setActivePage={switchPage}
         activeProperty={activeProperty}
-        setActiveProperty={setActiveProperty}
+        setActiveProperty={switchProperty}
         currency={currency}
         setCurrency={setCurrency}
         onOpenDirectPerks={() => setShowPerksModal(true)}
@@ -86,7 +127,7 @@ export default function App() {
           <>
             <HeroSection
               activeProperty={activeProperty}
-              setActiveProperty={setActiveProperty}
+              setActiveProperty={switchProperty}
               checkInDate={checkInDate}
               setCheckInDate={setCheckInDate}
               checkOutDate={checkOutDate}
@@ -237,7 +278,7 @@ export default function App() {
       <WhatsAppConcierge activeProperty={activeProperty} />
 
       {/* 9. Executive Footer */}
-      <Footer activeProperty={activeProperty} setActiveProperty={setActiveProperty} />
+      <Footer activeProperty={activeProperty} setActiveProperty={switchProperty} />
 
     </div>
   );
