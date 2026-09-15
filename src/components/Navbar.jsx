@@ -69,30 +69,35 @@ export default function Navbar({
           
           {/* Brand Logo & Master Monogram */}
           <div 
-            className="flex items-center gap-3 cursor-pointer" 
+            className="flex items-center gap-2.5 sm:gap-3 cursor-pointer" 
             onClick={() => {
               setActivePage('stay');
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
           >
-            <div className="w-12 h-12 bg-nishat-darkNavy/80 border border-nishat-gold/50 rounded-full p-1 flex items-center justify-center shadow-lg group hover:border-nishat-gold transition-all duration-300">
+            <div className="w-9 h-9 sm:w-12 sm:h-12 bg-black border border-amber-400/60 rounded-full p-1 flex items-center justify-center shadow-lg shrink-0 group hover:border-amber-400 transition-all duration-300">
               <img 
                 src={logoImg} 
                 alt="The Nishat Hotel Monogram" 
-                className="w-full h-full object-contain rounded-full drop-shadow-[0_0_10px_rgba(212,175,55,0.6)] group-hover:scale-105 transition-transform" 
+                className="w-full h-full object-contain rounded-full drop-shadow-[0_0_8px_rgba(212,175,55,0.6)] group-hover:scale-105 transition-transform" 
               />
             </div>
             <div>
-              <h1 className="font-serif text-lg sm:text-xl font-bold tracking-[0.22em] text-white uppercase leading-none">
+              <h1 className="font-serif text-sm sm:text-lg font-bold tracking-[0.12em] sm:tracking-[0.22em] text-white uppercase leading-tight">
                 THE NISHAT HOTEL
               </h1>
-              <div className="text-[10px] sm:text-xs tracking-widest text-nishat-gold font-medium mt-1 uppercase flex items-center gap-1">
+              {/* Mobile Single Active Location */}
+              <div className="text-[10px] tracking-wider text-amber-300 font-medium uppercase sm:hidden">
+                {activeProperty.name.replace('The Nishat Hotel — ', '')}
+              </div>
+              {/* Desktop Multi Location Pills */}
+              <div className="hidden sm:flex text-xs tracking-widest text-nishat-gold font-medium mt-0.5 uppercase items-center gap-1">
                 {PROPERTIES.map((p, idx) => (
                   <React.Fragment key={p.id}>
                     <span className={activeProperty.id === p.id ? "text-amber-300 font-bold border-b border-amber-400 pb-0.5" : "text-zinc-400 opacity-80"}>
                       {p.city === 'Lahore' ? p.id.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ') : p.city}
                     </span>
-                    {idx < PROPERTIES.length - 1 && <span className="text-nishat-gold/40">•</span>}
+                    {idx < PROPERTIES.length - 1 && <span className="text-amber-400/40">•</span>}
                   </React.Fragment>
                 ))}
               </div>
@@ -202,10 +207,10 @@ export default function Navbar({
           </div>
 
           {/* Mobile Menu Toggle Button */}
-          <div className="flex lg:hidden items-center gap-2">
+          <div className="flex lg:hidden items-center gap-1.5 sm:gap-2">
             <button
               onClick={onOpenLoyalty}
-              className="bg-zinc-900 border border-amber-400/60 p-2 rounded-md text-amber-300"
+              className="bg-black border border-amber-400/60 p-1.5 sm:p-2 rounded-lg text-amber-300 shadow-sm"
               title="Loyalty Pass"
             >
               <Award className="w-4 h-4" />
@@ -213,7 +218,7 @@ export default function Navbar({
 
             <button
               onClick={onOpenDigitalKey}
-              className="bg-zinc-900 border border-blue-400/60 p-2 rounded-md text-blue-200"
+              className="bg-black border border-blue-400/60 p-1.5 sm:p-2 rounded-lg text-blue-200 shadow-sm"
               title="Digital Key"
             >
               <Key className="w-4 h-4" />
@@ -221,17 +226,17 @@ export default function Navbar({
 
             <button
               onClick={() => setCurrency(currency === 'PKR' ? 'USD' : 'PKR')}
-              className="bg-nishat-darkNavy border border-nishat-gold/40 px-2.5 py-1.5 rounded-md text-xs font-bold text-nishat-gold"
+              className="bg-black border border-amber-400/60 px-2 py-1 sm:px-2.5 sm:py-1.5 rounded-lg text-[11px] sm:text-xs font-bold text-amber-300 shadow-sm"
             >
               {currency}
             </button>
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 text-zinc-300 hover:text-white rounded-lg bg-nishat-darkNavy border border-nishat-gold/30"
+              className="p-1.5 sm:p-2 text-white rounded-lg bg-black border border-amber-400/60 shadow-sm"
               aria-label="Toggle navigation menu"
             >
-              {isMobileMenuOpen ? <X className="w-6 h-6 text-nishat-gold" /> : <Menu className="w-6 h-6 text-nishat-gold" />}
+              {isMobileMenuOpen ? <X className="w-5 h-5 text-amber-300" /> : <Menu className="w-5 h-5 text-amber-300" />}
             </button>
           </div>
         </div>

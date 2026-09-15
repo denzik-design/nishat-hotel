@@ -20,16 +20,16 @@ export default function DirectPerksBar({ onOpenModal }) {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 w-full md:w-auto text-xs">
-          <div className="bg-black/90 text-white border border-black/40 rounded-xl p-2.5 flex items-center gap-2 shadow-sm font-semibold">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 w-full md:w-auto text-xs">
+          <div className="bg-black/90 text-white border border-black/40 rounded-xl p-2.5 flex items-center gap-2.5 shadow-sm font-semibold">
             <Coffee className="w-4 h-4 text-amber-300 shrink-0" />
             <span>Daily Buffet Breakfast Included</span>
           </div>
-          <div className="bg-black/90 text-white border border-black/40 rounded-xl p-2.5 flex items-center gap-2 shadow-sm font-semibold">
+          <div className="bg-black/90 text-white border border-black/40 rounded-xl p-2.5 flex items-center gap-2.5 shadow-sm font-semibold">
             <Clock className="w-4 h-4 text-amber-300 shrink-0" />
             <span>Guaranteed 2:00 PM Late Checkout</span>
           </div>
-          <div className="bg-black/90 text-white border border-black/40 rounded-xl p-2.5 flex items-center gap-2 shadow-sm font-semibold col-span-2 sm:col-span-1">
+          <div className="bg-black/90 text-white border border-black/40 rounded-xl p-2.5 flex items-center gap-2.5 shadow-sm font-semibold">
             <Tag className="w-4 h-4 text-amber-300 shrink-0" />
             <span>Best Rate Direct Guarantee</span>
           </div>

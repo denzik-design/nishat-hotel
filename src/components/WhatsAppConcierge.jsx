@@ -19,11 +19,11 @@ export default function WhatsAppConcierge({ activeProperty }) {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-40 print:hidden">
+    <div className="fixed bottom-4 sm:bottom-6 right-3 sm:right-6 z-40 print:hidden">
       
       {/* Floating Concierge Chat Drawer */}
       {isOpen && (
-        <div className="absolute bottom-16 right-0 w-80 sm:w-96 bg-nishat-darkNavy border-2 border-nishat-gold rounded-2xl shadow-2xl overflow-hidden animate-in fade-in slide-in-from-bottom-5 duration-300">
+        <div className="absolute bottom-16 right-0 w-[calc(100vw-32px)] sm:w-96 max-w-sm bg-black border-2 border-amber-400 rounded-2xl shadow-2xl overflow-hidden animate-in fade-in slide-in-from-bottom-5 duration-300">
           
           {/* Header */}
           <div className="bg-gradient-to-r from-nishat-navy via-amber-950 to-nishat-navy p-4 border-b border-nishat-gold/40 flex items-center justify-between text-white">

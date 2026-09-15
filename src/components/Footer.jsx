@@ -5,8 +5,8 @@ import { PROPERTIES } from '../data/propertiesData';
 
 export default function Footer({ activeProperty, setActiveProperty }) {
   return (
-    <footer className="bg-black border-t-2 border-amber-400/50 text-white pt-16 pb-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+    <footer className="bg-black border-t-2 border-amber-400/50 text-white pt-12 sm:pt-16 pb-10 sm:pb-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10">
         
         {/* Col 1: Brand & Logo */}
         <div className="space-y-4 md:col-span-1">

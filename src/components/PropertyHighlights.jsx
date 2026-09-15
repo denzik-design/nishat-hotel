@@ -19,11 +19,11 @@ export default function PropertyHighlights({ activeProperty }) {
         </div>
 
         {/* Highlights Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6">
           {activeProperty.highlights.map((item, idx) => (
             <div 
               key={idx}
-              className="bg-zinc-50 border-2 border-amber-400/40 rounded-2xl p-5 text-center shadow-md hover:border-amber-500 hover:shadow-xl hover:bg-white transition-all duration-300 transform hover:-translate-y-1"
+              className="bg-zinc-50 border-2 border-amber-400/40 rounded-2xl p-3.5 sm:p-5 text-center shadow-md hover:border-amber-500 hover:shadow-xl hover:bg-white transition-all duration-300 transform hover:-translate-y-1"
             >
               <div className="w-12 h-12 rounded-full bg-amber-50 border border-amber-400/60 mx-auto flex items-center justify-center text-amber-700 mb-3 shadow-inner">
                 {idx === 0 ? <Compass className="w-6 h-6" /> : idx === 1 ? <Waves className="w-6 h-6" /> : idx === 2 ? <Utensils className="w-6 h-6" /> : <Sparkles className="w-6 h-6" />}

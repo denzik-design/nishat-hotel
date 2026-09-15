@@ -12,7 +12,7 @@ export default function RoomCard({
     <div className="bg-white border-2 border-amber-300/80 rounded-2xl overflow-hidden shadow-lg hover:border-amber-500 hover:shadow-2xl transition-all duration-300 flex flex-col group">
       
       {/* Room Image Container with Hover Zoom */}
-      <div className="relative h-64 sm:h-72 overflow-hidden bg-black">
+      <div className="relative h-56 sm:h-72 overflow-hidden bg-black">
         <img
           src={room.image}
           alt={room.title}
@@ -22,11 +22,11 @@ export default function RoomCard({
 
         {/* Top Badges */}
         <div className="absolute top-3 left-3 right-3 flex justify-between items-start">
-          <span className="bg-black/90 border border-amber-400 text-amber-300 text-[10px] sm:text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider backdrop-blur-md shadow-md">
+          <span className="bg-black/90 border border-amber-400 text-amber-300 text-[10px] sm:text-xs font-bold px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full uppercase tracking-wider backdrop-blur-md shadow-md">
             {room.category}
           </span>
           {room.availableCount <= 2 && (
-            <span className="bg-amber-600 text-white text-[10px] sm:text-xs font-bold px-2.5 py-1 rounded-full flex items-center gap-1 backdrop-blur-md shadow-lg animate-pulse">
+            <span className="bg-amber-600 text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full flex items-center gap-1 backdrop-blur-md shadow-lg animate-pulse">
               <Zap className="w-3 h-3 text-yellow-200 fill-yellow-200" />
               Only {room.availableCount} Left!
             </span>
@@ -36,18 +36,18 @@ export default function RoomCard({
         {/* 360° Virtual Tour Quick Floating Badge */}
         <button
           onClick={() => onOpen360Tour(room)}
-          className="absolute bottom-3 right-3 bg-black/85 hover:bg-amber-400 text-white hover:text-black border border-amber-400/80 text-xs font-bold px-3 py-1.5 rounded-lg flex items-center gap-1.5 backdrop-blur-md transition-all duration-200 shadow-xl"
+          className="absolute bottom-3 right-3 bg-black/85 hover:bg-amber-400 text-white hover:text-black border border-amber-400/80 text-[11px] sm:text-xs font-bold px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg flex items-center gap-1.5 backdrop-blur-md transition-all duration-200 shadow-xl"
         >
-          <Eye className="w-4 h-4 text-amber-300 group-hover:text-black" />
-          <span>360° Virtual Tour</span>
+          <Eye className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-300 group-hover:text-black" />
+          <span>360° Tour</span>
         </button>
       </div>
 
       {/* Room Details & Content */}
-      <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between bg-white">
+      <div className="p-4 sm:p-6 flex-1 flex flex-col justify-between bg-white">
         <div>
           {/* Room Title */}
-          <h3 className="font-serif text-xl sm:text-2xl font-bold text-black tracking-wide group-hover:text-amber-700 transition-colors">
+          <h3 className="font-serif text-lg sm:text-2xl font-bold text-black tracking-wide group-hover:text-amber-700 transition-colors">
             {room.title}
           </h3>
 

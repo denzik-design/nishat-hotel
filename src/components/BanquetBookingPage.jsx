@@ -139,13 +139,13 @@ export default function BanquetBookingPage({
         </div>
 
         {/* SECTION 2: LIVE BANQUET COST CALCULATOR & BOOKING */}
-        <div id="banquet-calculator" className="bg-gradient-to-br from-nishat-darkNavy to-slate-950 border-2 border-nishat-gold/60 rounded-3xl p-6 sm:p-10 shadow-2xl space-y-8">
+        <div id="banquet-calculator" className="bg-gradient-to-br from-black to-zinc-950 border-2 border-amber-400 rounded-2xl sm:rounded-3xl p-4 sm:p-8 lg:p-10 shadow-2xl space-y-6 sm:space-y-8">
           
           <div className="border-b border-zinc-800 pb-4">
-            <span className="text-xs font-bold uppercase tracking-widest text-nishat-gold">
+            <span className="text-xs font-bold uppercase tracking-widest text-amber-400 block mb-1">
               Instant Event Estimator & Reservation
             </span>
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white mt-1">
+            <h2 className="font-serif text-xl sm:text-3xl font-bold text-white mt-1">
               Customize Your Event at {selectedVenue.name}
             </h2>
           </div>
@@ -293,7 +293,7 @@ export default function BanquetBookingPage({
             </div>
 
             {/* Right Summary Column (5 Cols) */}
-            <div className="lg:col-span-5 bg-nishat-navy border border-nishat-gold/40 rounded-2xl p-6 flex flex-col justify-between space-y-6">
+            <div className="lg:col-span-5 bg-black border-2 border-amber-400/60 rounded-2xl p-4 sm:p-6 flex flex-col justify-between space-y-6 shadow-xl">
               
               <div className="space-y-4">
                 <div className="border-b border-zinc-800 pb-3">
