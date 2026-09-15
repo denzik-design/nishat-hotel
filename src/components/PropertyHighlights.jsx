@@ -3,13 +3,17 @@ import { Award, Compass, Sparkles, Shield, Wifi, Utensils, Coffee, Waves } from 
 
 export default function PropertyHighlights({ activeProperty }) {
   return (
-    <section className="bg-gradient-to-b from-nishat-navy to-nishat-darkNavy text-white py-12 px-4 sm:px-6 lg:px-8 border-b border-nishat-gold/20">
+    <section className="bg-white text-zinc-900 py-14 px-4 sm:px-6 lg:px-8 border-b border-amber-200/60 shadow-sm">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-8">
-          <h2 className="font-serif text-2xl sm:text-3xl font-bold tracking-wider uppercase text-amber-200">
-            {activeProperty.name.replace('The Nishat Hotel — ', '')} Experience
+        <div className="text-center mb-10">
+          <span className="text-xs font-bold uppercase tracking-[0.25em] text-amber-600 block mb-1">
+            Unrivaled Distinction
+          </span>
+          <h2 className="font-serif text-2xl sm:text-4xl font-bold tracking-wider uppercase text-black">
+            {activeProperty.name.replace('The Nishat Hotel — ', '')} Signature Experience
           </h2>
-          <p className="text-xs sm:text-sm text-zinc-400 mt-2 max-w-xl mx-auto">
+          <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-amber-500 to-transparent mx-auto my-3" />
+          <p className="text-xs sm:text-sm text-zinc-600 max-w-xl mx-auto font-medium">
             {activeProperty.description}
           </p>
         </div>
@@ -19,15 +23,15 @@ export default function PropertyHighlights({ activeProperty }) {
           {activeProperty.highlights.map((item, idx) => (
             <div 
               key={idx}
-              className="bg-zinc-900/80 border border-nishat-gold/30 rounded-xl p-4 sm:p-5 text-center shadow-lg hover:border-nishat-gold transition-all duration-300 transform hover:-translate-y-1"
+              className="bg-zinc-50 border-2 border-amber-400/40 rounded-2xl p-5 text-center shadow-md hover:border-amber-500 hover:shadow-xl hover:bg-white transition-all duration-300 transform hover:-translate-y-1"
             >
-              <div className="w-10 h-10 rounded-full bg-nishat-gold/20 border border-nishat-gold/50 mx-auto flex items-center justify-center text-nishat-gold mb-3">
-                {idx === 0 ? <Compass className="w-5 h-5" /> : idx === 1 ? <Waves className="w-5 h-5" /> : idx === 2 ? <Utensils className="w-5 h-5" /> : <Sparkles className="w-5 h-5" />}
+              <div className="w-12 h-12 rounded-full bg-amber-50 border border-amber-400/60 mx-auto flex items-center justify-center text-amber-700 mb-3 shadow-inner">
+                {idx === 0 ? <Compass className="w-6 h-6" /> : idx === 1 ? <Waves className="w-6 h-6" /> : idx === 2 ? <Utensils className="w-6 h-6" /> : <Sparkles className="w-6 h-6" />}
               </div>
-              <h3 className="font-serif text-xs sm:text-sm font-bold text-amber-300 uppercase tracking-wide">
+              <h3 className="font-serif text-xs sm:text-sm font-bold text-black uppercase tracking-wide">
                 {item.label}
               </h3>
-              <p className="text-xs text-zinc-300 mt-1 font-light">
+              <p className="text-xs text-zinc-600 mt-1 font-normal">
                 {item.detail}
               </p>
             </div>

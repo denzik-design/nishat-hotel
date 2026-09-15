@@ -35,11 +35,11 @@ export default function WellnessPage({
   };
 
   return (
-    <div className="min-h-screen bg-nishat-navy text-white pb-20">
+    <div className="min-h-screen bg-[#faf9f6] text-zinc-900 pb-20">
       {/* Hero Header */}
-      <div className="relative bg-gradient-to-b from-nishat-darkNavy via-slate-900 to-nishat-navy py-16 px-4 sm:px-6 lg:px-8 border-b border-nishat-gold/30 text-center">
-        <div className="inline-flex items-center gap-2 bg-amber-950/80 border border-nishat-gold/50 px-4 py-1.5 rounded-full text-xs font-semibold text-amber-300 uppercase tracking-widest mb-4">
-          <Sparkles className="w-3.5 h-3.5 text-nishat-gold" />
+      <div className="relative bg-black py-16 px-4 sm:px-6 lg:px-8 border-b-2 border-amber-400/40 text-center text-white">
+        <div className="inline-flex items-center gap-2 bg-zinc-900 border border-amber-400/60 px-4 py-1.5 rounded-full text-xs font-semibold text-amber-300 uppercase tracking-widest mb-4 shadow-md">
+          <Sparkles className="w-3.5 h-3.5 text-amber-400" />
           <span>The Oasis Wellness & Hydrotherapy Spa</span>
         </div>
         <h1 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-white max-w-3xl mx-auto leading-tight">
@@ -55,28 +55,28 @@ export default function WellnessPage({
           {WELLNESS_SERVICES.map((service) => (
             <div
               key={service.id}
-              className="bg-nishat-darkNavy border border-nishat-gold/40 hover:border-nishat-gold rounded-2xl overflow-hidden shadow-2xl transition-all duration-300 flex flex-col justify-between group"
+              className="bg-white border-2 border-amber-300/80 hover:border-amber-500 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
                 <div className="relative h-56 overflow-hidden bg-black">
                   <img src={service.image} alt={service.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-95" />
-                  <div className="absolute bottom-3 right-3 bg-black/80 text-amber-300 text-xs font-bold px-3 py-1 rounded-lg backdrop-blur-sm flex items-center gap-1">
+                  <div className="absolute bottom-3 right-3 bg-black/85 text-amber-300 text-xs font-bold px-3 py-1 rounded-lg backdrop-blur-sm flex items-center gap-1 shadow-md">
                     <Clock className="w-3.5 h-3.5" />
                     <span>{service.duration}</span>
                   </div>
                 </div>
 
                 <div className="p-6 space-y-3">
-                  <h3 className="font-serif text-lg sm:text-xl font-bold text-white group-hover:text-amber-300 transition-colors">
+                  <h3 className="font-serif text-lg sm:text-xl font-bold text-black group-hover:text-amber-700 transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-xs text-zinc-300 leading-relaxed font-light">
+                  <p className="text-xs text-zinc-600 leading-relaxed font-normal">
                     {service.description}
                   </p>
-                  <div className="space-y-1.5 border-t border-zinc-800 pt-3">
+                  <div className="space-y-1.5 border-t border-zinc-100 pt-3">
                     {service.benefits.map((b, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-xs text-amber-200/90">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                      <div key={idx} className="flex items-center gap-2 text-xs text-zinc-700 font-medium">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                         <span>{b}</span>
                       </div>
                     ))}
@@ -84,16 +84,16 @@ export default function WellnessPage({
                 </div>
               </div>
 
-              <div className="p-6 pt-0 border-t border-zinc-800/80 mt-4 flex items-center justify-between">
+              <div className="p-6 pt-0 border-t border-amber-200/60 mt-4 flex items-center justify-between">
                 <div>
-                  <span className="text-[10px] text-zinc-400 uppercase font-semibold block">Session Fee</span>
-                  <span className="font-serif text-xl font-bold gold-gradient-text">
+                  <span className="text-[10px] text-zinc-500 uppercase font-semibold block">Session Fee</span>
+                  <span className="font-serif text-xl font-black text-black">
                     {formatCurrency(service.pricePKR, currency)}
                   </span>
                 </div>
                 <button
                   onClick={() => handleOpenBooking(service)}
-                  className="gold-gradient-bg text-nishat-navy font-bold py-2.5 px-4 rounded-xl text-xs uppercase tracking-wider shadow-lg hover:brightness-110 active:scale-95 transition-all"
+                  className="gold-gradient-bg text-black font-black py-2.5 px-4 rounded-xl text-xs uppercase tracking-wider shadow-md hover:brightness-105 active:scale-95 transition-all"
                 >
                   Book Session
                 </button>

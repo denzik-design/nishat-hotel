@@ -57,12 +57,12 @@ export default function DiningPage({
   };
 
   return (
-    <div className="min-h-screen bg-nishat-navy text-white pb-20">
+    <div className="min-h-screen bg-[#faf9f6] text-zinc-900 pb-20">
       
       {/* Top Banner */}
-      <div className="relative bg-gradient-to-b from-nishat-darkNavy via-slate-900 to-nishat-navy py-16 px-4 sm:px-6 lg:px-8 border-b border-nishat-gold/30 text-center">
-        <div className="inline-flex items-center gap-2 bg-amber-950/80 border border-nishat-gold/50 px-4 py-1.5 rounded-full text-xs font-semibold text-amber-300 uppercase tracking-widest mb-4">
-          <Utensils className="w-3.5 h-3.5 text-nishat-gold" />
+      <div className="relative bg-black py-16 px-4 sm:px-6 lg:px-8 border-b-2 border-amber-400/40 text-center text-white">
+        <div className="inline-flex items-center gap-2 bg-zinc-900 border border-amber-400/60 px-4 py-1.5 rounded-full text-xs font-semibold text-amber-300 uppercase tracking-widest mb-4 shadow-md">
+          <Utensils className="w-3.5 h-3.5 text-amber-400" />
           <span>Award-Winning Haute Cuisine & Buffets</span>
         </div>
         <h1 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-white max-w-3xl mx-auto leading-tight">
@@ -80,7 +80,7 @@ export default function DiningPage({
           {DINING_EXPERIENCES.map((exp) => (
             <div 
               key={exp.id}
-              className="bg-nishat-darkNavy border border-nishat-gold/40 hover:border-nishat-gold rounded-2xl overflow-hidden shadow-2xl transition-all duration-300 flex flex-col justify-between group"
+              className="bg-white border-2 border-amber-300/80 hover:border-amber-500 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
                 <div className="relative h-64 overflow-hidden bg-black">
@@ -93,30 +93,30 @@ export default function DiningPage({
                     }}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-95"
                   />
-                  <div className="absolute top-3 left-3 bg-nishat-navy/90 border border-nishat-gold text-amber-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider backdrop-blur-md">
+                  <div className="absolute top-3 left-3 bg-black/90 border border-amber-400 text-amber-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider backdrop-blur-md shadow-md">
                     {exp.type}
                   </div>
-                  <div className="absolute bottom-3 right-3 bg-black/80 text-zinc-300 text-xs font-medium px-3 py-1 rounded-lg backdrop-blur-sm flex items-center gap-1.5">
-                    <Clock className="w-3.5 h-3.5 text-nishat-gold" />
+                  <div className="absolute bottom-3 right-3 bg-black/85 text-zinc-200 text-xs font-medium px-3 py-1 rounded-lg backdrop-blur-sm flex items-center gap-1.5 shadow-md">
+                    <Clock className="w-3.5 h-3.5 text-amber-300" />
                     <span>{exp.timing}</span>
                   </div>
                 </div>
 
                 <div className="p-6 space-y-4">
-                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-white group-hover:text-amber-300 transition-colors">
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-black group-hover:text-amber-700 transition-colors">
                     {exp.title}
                   </h3>
-                  <p className="text-xs text-zinc-300 leading-relaxed font-light">
+                  <p className="text-xs text-zinc-600 leading-relaxed font-normal">
                     {exp.description}
                   </p>
 
-                  <div className="space-y-2 border-t border-zinc-800 pt-3">
-                    <span className="text-[11px] font-bold text-nishat-gold uppercase tracking-wider block">
+                  <div className="space-y-2 border-t border-zinc-100 pt-3">
+                    <span className="text-[11px] font-bold text-amber-600 uppercase tracking-wider block">
                       Signature Highlights:
                     </span>
                     {exp.features.map((feat, idx) => (
-                      <div key={idx} className="flex items-start gap-2 text-xs text-zinc-300">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                      <div key={idx} className="flex items-start gap-2 text-xs text-zinc-700 font-medium">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
                         <span>{feat}</span>
                       </div>
                     ))}
@@ -125,18 +125,18 @@ export default function DiningPage({
               </div>
 
               {/* Price & CTA */}
-              <div className="p-6 pt-0 border-t border-zinc-800/80 mt-4 flex items-center justify-between">
+              <div className="p-6 pt-0 border-t border-amber-200/60 mt-4 flex items-center justify-between">
                 <div>
-                  <span className="text-[10px] text-zinc-400 uppercase font-semibold block">Experience Price</span>
-                  <span className="font-serif text-2xl font-bold gold-gradient-text">
+                  <span className="text-[10px] text-zinc-500 uppercase font-semibold block">Experience Price</span>
+                  <div className="font-serif text-2xl font-black text-black">
                     {formatCurrency(exp.pricePKR, currency)}
-                  </span>
-                  <span className="text-[11px] text-zinc-400 block">{exp.perText}</span>
+                    <span className="text-xs font-normal text-zinc-500"> {exp.id === 'high-tea' ? 'per couple' : 'per guest'}</span>
+                  </div>
                 </div>
 
                 <button
                   onClick={() => handleOpenBooking(exp)}
-                  className="gold-gradient-bg text-nishat-navy font-bold py-3 px-5 rounded-xl text-xs sm:text-sm uppercase tracking-wider shadow-lg hover:brightness-110 active:scale-95 transition-all flex items-center gap-1.5"
+                  className="gold-gradient-bg text-black font-black py-2.5 px-4 rounded-xl text-xs uppercase tracking-wider shadow-md hover:brightness-105 active:scale-95 transition-all flex items-center gap-1"
                 >
                   <span>Reserve Table</span>
                   <ChevronRight className="w-4 h-4" />

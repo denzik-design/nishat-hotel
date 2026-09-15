@@ -63,14 +63,14 @@ export default function HeroSection({
 
       {/* Sticky Quick-Search Booking Bar */}
       <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 w-full pb-8 -mt-6">
-        <div className="bg-nishat-darkNavy/95 border border-nishat-gold/50 rounded-2xl p-4 sm:p-5 shadow-2xl backdrop-blur-xl gold-border-glow">
+        <div className="bg-white/95 text-zinc-900 border-2 border-amber-400 rounded-2xl p-4 sm:p-5 shadow-[0_20px_50px_rgba(0,0,0,0.6)] backdrop-blur-xl">
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-3 sm:gap-4 items-center">
             
             {/* 1. Destination Dropdown */}
             <div className="flex flex-col text-left">
-              <label className="text-[11px] font-bold uppercase tracking-wider text-nishat-gold flex items-center gap-1 mb-1">
-                <MapPin className="w-3.5 h-3.5" /> Destination Hotel
+              <label className="text-[11px] font-bold uppercase tracking-wider text-black flex items-center gap-1 mb-1">
+                <MapPin className="w-3.5 h-3.5 text-amber-600" /> Destination Hotel
               </label>
               <div className="relative">
                 <select
@@ -79,22 +79,22 @@ export default function HeroSection({
                     const selected = PROPERTIES.find(p => p.id === e.target.value);
                     if (selected) setActiveProperty(selected);
                   }}
-                  className="w-full bg-zinc-900/90 border border-zinc-700 focus:border-nishat-gold text-white text-sm rounded-xl px-3.5 py-3 pr-8 appearance-none focus:outline-none focus:ring-2 focus:ring-nishat-gold/50 font-medium cursor-pointer"
+                  className="w-full bg-zinc-50 border border-zinc-300 focus:border-amber-500 text-zinc-900 text-sm rounded-xl px-3.5 py-3 pr-8 appearance-none focus:outline-none focus:ring-2 focus:ring-amber-400/50 font-semibold cursor-pointer shadow-sm"
                 >
                   {PROPERTIES.map(p => (
-                    <option key={p.id} value={p.id} className="bg-nishat-darkNavy text-white py-2">
+                    <option key={p.id} value={p.id} className="bg-white text-zinc-900 py-2">
                       {p.name}
                     </option>
                   ))}
                 </select>
-                <ChevronDown className="w-4 h-4 text-nishat-gold absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                <ChevronDown className="w-4 h-4 text-amber-600 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
               </div>
             </div>
 
             {/* 2. Check-In & Check-Out Date Range */}
             <div className="flex flex-col text-left">
-              <label className="text-[11px] font-bold uppercase tracking-wider text-nishat-gold flex items-center gap-1 mb-1">
-                <Calendar className="w-3.5 h-3.5" /> Stay Dates (2 Nights Default)
+              <label className="text-[11px] font-bold uppercase tracking-wider text-black flex items-center gap-1 mb-1">
+                <Calendar className="w-3.5 h-3.5 text-amber-600" /> Stay Dates (2 Nights)
               </label>
               <div className="grid grid-cols-2 gap-2">
                 <div>
@@ -102,7 +102,7 @@ export default function HeroSection({
                     type="date"
                     value={checkInDate}
                     onChange={(e) => setCheckInDate(e.target.value)}
-                    className="w-full bg-zinc-900/90 border border-zinc-700 focus:border-nishat-gold text-white text-xs sm:text-sm rounded-xl px-2.5 py-2.5 focus:outline-none focus:ring-1 focus:ring-nishat-gold font-medium"
+                    className="w-full bg-zinc-50 border border-zinc-300 focus:border-amber-500 text-zinc-900 text-xs sm:text-sm rounded-xl px-2.5 py-2.5 focus:outline-none focus:ring-1 focus:ring-amber-400 font-semibold shadow-sm"
                   />
                 </div>
                 <div>
@@ -110,7 +110,7 @@ export default function HeroSection({
                     type="date"
                     value={checkOutDate}
                     onChange={(e) => setCheckOutDate(e.target.value)}
-                    className="w-full bg-zinc-900/90 border border-zinc-700 focus:border-nishat-gold text-white text-xs sm:text-sm rounded-xl px-2.5 py-2.5 focus:outline-none focus:ring-1 focus:ring-nishat-gold font-medium"
+                    className="w-full bg-zinc-50 border border-zinc-300 focus:border-amber-500 text-zinc-900 text-xs sm:text-sm rounded-xl px-2.5 py-2.5 focus:outline-none focus:ring-1 focus:ring-amber-400 font-semibold shadow-sm"
                   />
                 </div>
               </div>
@@ -118,16 +118,16 @@ export default function HeroSection({
 
             {/* 3. Guests Selector */}
             <div className="flex flex-col text-left">
-              <label className="text-[11px] font-bold uppercase tracking-wider text-nishat-gold flex items-center gap-1 mb-1">
-                <Users className="w-3.5 h-3.5" /> Guests & Occupancy
+              <label className="text-[11px] font-bold uppercase tracking-wider text-black flex items-center gap-1 mb-1">
+                <Users className="w-3.5 h-3.5 text-amber-600" /> Guests & Occupancy
               </label>
-              <div className="flex items-center gap-2 bg-zinc-900/90 border border-zinc-700 rounded-xl px-3 py-2.5">
-                <div className="flex-1 flex items-center justify-between text-xs text-zinc-200 font-medium">
+              <div className="flex items-center gap-2 bg-zinc-50 border border-zinc-300 rounded-xl px-3 py-2.5 shadow-sm">
+                <div className="flex-1 flex items-center justify-between text-xs text-zinc-800 font-bold">
                   <span>Adults:</span>
                   <select 
                     value={adults} 
                     onChange={(e) => setAdults(Number(e.target.value))}
-                    className="bg-zinc-800 text-amber-300 font-bold px-2 py-1 rounded border border-zinc-600 focus:outline-none"
+                    className="bg-white text-black font-black px-2 py-1 rounded border border-zinc-300 focus:outline-none"
                   >
                     <option value={1}>1</option>
                     <option value={2}>2</option>
@@ -135,13 +135,13 @@ export default function HeroSection({
                     <option value={4}>4</option>
                   </select>
                 </div>
-                <span className="text-zinc-600">|</span>
-                <div className="flex-1 flex items-center justify-between text-xs text-zinc-200 font-medium">
+                <span className="text-zinc-300">|</span>
+                <div className="flex-1 flex items-center justify-between text-xs text-zinc-800 font-bold">
                   <span>Children:</span>
                   <select 
                     value={childrenCount} 
                     onChange={(e) => setChildrenCount(Number(e.target.value))}
-                    className="bg-zinc-800 text-amber-300 font-bold px-2 py-1 rounded border border-zinc-600 focus:outline-none"
+                    className="bg-white text-black font-black px-2 py-1 rounded border border-zinc-300 focus:outline-none"
                   >
                     <option value={0}>0</option>
                     <option value={1}>1</option>
@@ -155,9 +155,9 @@ export default function HeroSection({
             <div className="flex flex-col justify-end pt-1">
               <button
                 onClick={onCheckAvailability}
-                className="w-full gold-gradient-bg text-nishat-navy font-bold py-3.5 px-6 rounded-xl text-sm sm:text-base tracking-wider uppercase shadow-xl hover:brightness-110 active:scale-98 transition-all flex items-center justify-center gap-2 group"
+                className="w-full gold-gradient-bg text-black font-black py-3.5 px-6 rounded-xl text-sm sm:text-base tracking-wider uppercase shadow-xl hover:brightness-105 active:scale-98 transition-all flex items-center justify-center gap-2 group"
               >
-                <Search className="w-4 h-4 stroke-[2.5] group-hover:scale-110 transition-transform" />
+                <Search className="w-4 h-4 stroke-[3] group-hover:scale-110 transition-transform" />
                 <span>Check Availability</span>
               </button>
             </div>
@@ -165,15 +165,15 @@ export default function HeroSection({
           </div>
 
           {/* Quick Direct Privileges Bar Below Search */}
-          <div className="mt-3 pt-3 border-t border-zinc-800/80 flex flex-wrap justify-between items-center text-[11px] text-zinc-300 px-1 gap-2">
-            <span className="flex items-center gap-1.5 text-emerald-400 font-medium">
-              <Check className="w-3.5 h-3.5 text-emerald-400" /> Free Cancellation up to 24h prior
+          <div className="mt-3.5 pt-3 border-t border-zinc-200 flex flex-wrap justify-between items-center text-[11px] text-zinc-600 px-1 gap-2">
+            <span className="flex items-center gap-1.5 text-emerald-700 font-semibold">
+              <Check className="w-3.5 h-3.5 text-emerald-600 stroke-[3]" /> Free Cancellation up to 24h prior
             </span>
-            <span className="flex items-center gap-1.5 text-amber-300 font-medium">
-              <Check className="w-3.5 h-3.5 text-amber-300" /> Direct VIP Breakfast & Late Checkout Included
+            <span className="flex items-center gap-1.5 text-amber-800 font-semibold">
+              <Check className="w-3.5 h-3.5 text-amber-600 stroke-[3]" /> Direct VIP Breakfast & Late Checkout Included
             </span>
-            <span className="flex items-center gap-1.5 text-zinc-400">
-              <ShieldCheck className="w-3.5 h-3.5 text-nishat-gold" /> No Hidden Fees & Instant Confirmation
+            <span className="flex items-center gap-1.5 text-zinc-700 font-medium">
+              <ShieldCheck className="w-3.5 h-3.5 text-amber-600" /> Best Rate Direct Guarantee
             </span>
           </div>
 

@@ -57,12 +57,12 @@ export default function BanquetBookingPage({
   };
 
   return (
-    <div className="min-h-screen bg-nishat-navy text-white pb-20">
+    <div className="min-h-screen bg-[#faf9f6] text-zinc-900 pb-20">
       
       {/* Top Banner */}
-      <div className="relative bg-gradient-to-b from-nishat-darkNavy via-slate-900 to-nishat-navy py-16 px-4 sm:px-6 lg:px-8 border-b border-nishat-gold/30 text-center">
-        <div className="inline-flex items-center gap-2 bg-amber-950/80 border border-nishat-gold/50 px-4 py-1.5 rounded-full text-xs font-semibold text-amber-300 uppercase tracking-widest mb-4">
-          <Sparkles className="w-3.5 h-3.5 text-nishat-gold" />
+      <div className="relative bg-black py-16 px-4 sm:px-6 lg:px-8 border-b-2 border-amber-400/40 text-center text-white">
+        <div className="inline-flex items-center gap-2 bg-zinc-900 border border-amber-400/60 px-4 py-1.5 rounded-full text-xs font-semibold text-amber-300 uppercase tracking-widest mb-4 shadow-md">
+          <Sparkles className="w-3.5 h-3.5 text-amber-400" />
           <span>Banquets, Royal Weddings & Conventions</span>
         </div>
         <h1 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-white max-w-3xl mx-auto leading-tight">
@@ -78,39 +78,40 @@ export default function BanquetBookingPage({
         {/* SECTION 1: VENUES SHOWCASE */}
         <div>
           <div className="text-center mb-10">
-            <span className="text-xs font-bold uppercase tracking-widest text-nishat-gold">
+            <span className="text-xs font-bold uppercase tracking-widest text-amber-600 block mb-1">
               Premier Event Spaces
             </span>
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white mt-1">
+            <h2 className="font-serif text-2xl sm:text-4xl font-bold text-black">
               Available Grand Halls & Ballrooms
             </h2>
+            <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-amber-500 to-transparent mx-auto my-3" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {venues.map((venue) => (
               <div 
                 key={venue.id}
-                className={`bg-nishat-darkNavy border-2 rounded-2xl overflow-hidden shadow-2xl transition-all duration-300 flex flex-col justify-between ${
-                  selectedVenue.id === venue.id ? 'border-nishat-gold shadow-[0_10px_30px_rgba(180,140,72,0.2)]' : 'border-zinc-800'
+                className={`bg-white border-2 rounded-2xl overflow-hidden shadow-lg transition-all duration-300 flex flex-col justify-between ${
+                  selectedVenue.id === venue.id ? 'border-amber-500 shadow-[0_10px_30px_rgba(212,175,55,0.25)]' : 'border-amber-300/60'
                 }`}
               >
                 <div>
-                  <div className="relative h-64 overflow-hidden">
+                  <div className="relative h-64 overflow-hidden bg-black">
                     <img src={venue.image} alt={venue.name} className="w-full h-full object-cover filter brightness-95" />
-                    <div className="absolute top-3 right-3 bg-black/80 border border-nishat-gold text-amber-300 text-xs font-bold px-3 py-1 rounded-full backdrop-blur-md">
+                    <div className="absolute top-3 right-3 bg-black/90 border border-amber-400 text-amber-300 text-xs font-bold px-3 py-1 rounded-full backdrop-blur-md shadow-md">
                       {venue.capacity}
                     </div>
                   </div>
                   <div className="p-6 space-y-3">
-                    <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">
+                    <h3 className="font-serif text-xl sm:text-2xl font-bold text-black">
                       {venue.name}
                     </h3>
-                    <p className="text-xs text-zinc-300 leading-relaxed font-light">
+                    <p className="text-xs text-zinc-600 leading-relaxed font-normal">
                       {venue.description}
                     </p>
-                    <div className="grid grid-cols-2 gap-2 text-xs text-amber-200/90 pt-2 border-t border-zinc-800">
-                      <div>• Area: <strong>{venue.area}</strong></div>
-                      <div>• Ceilings: <strong>{venue.ceiling}</strong></div>
+                    <div className="grid grid-cols-2 gap-2 text-xs text-zinc-800 pt-2 border-t border-zinc-200">
+                      <div>• Area: <strong className="text-amber-700">{venue.area}</strong></div>
+                      <div>• Ceilings: <strong className="text-amber-700">{venue.ceiling}</strong></div>
                     </div>
                   </div>
                 </div>
@@ -124,8 +125,8 @@ export default function BanquetBookingPage({
                     }}
                     className={`w-full py-3 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2 ${
                       selectedVenue.id === venue.id
-                        ? 'gold-gradient-bg text-nishat-navy shadow-lg'
-                        : 'bg-zinc-900 text-zinc-300 border border-zinc-700 hover:border-nishat-gold'
+                        ? 'gold-gradient-bg text-black font-black shadow-md'
+                        : 'bg-black text-white hover:bg-zinc-800 border border-black'
                     }`}
                   >
                     <span>{selectedVenue.id === venue.id ? '✓ Selected for Estimation' : 'Select Venue for Booking'}</span>
