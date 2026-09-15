@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  h1, h2, h3, .font-serif-luxury {
+    font-family: 'Cinzel', serif;
+  }
+}
+
+/* Custom scrollbar for luxury UI */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: #b48c48;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c5a059;
+}
+
+/* Gold Gradient utilities */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #f4e0b0 0%, #c5a059 40%, #b48c48 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #c5a059 0%, #b48c48 100%);
+}
+
+.gold-border-glow {
+  box-shadow: 0 0 15px rgba(180, 140, 72, 0.25);
+  border: 1px solid rgba(180, 140, 72, 0.4);
+}
+
+/* Smooth drag cursor for 360 viewer */
+.cursor-grab {
+  cursor: grab;
+}
+.cursor-grabbing {
+  cursor: grabbing;
+}
